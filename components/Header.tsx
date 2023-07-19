@@ -6,6 +6,10 @@ import { ThemeToggler } from "./ui/theme-toggle";
 
 const navigationItems = [
     {
+        displayName: "Home",
+        path: "/"
+    },
+    {
         displayName: "About Me",
         path: "/about"
     },

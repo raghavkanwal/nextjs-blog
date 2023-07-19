@@ -1,5 +1,3 @@
-import AboutPageSection from "../page-modules/about/AboutPageSection";
-
 import fs from 'fs';
 
 const getPostMetadata = () => {
@@ -11,7 +9,7 @@ const getPostMetadata = () => {
     return slugs;
 }
 
-export default function BlogPage({ allPostsData }: { allPostsData:any}) {
+export default function BlogPage() {
     const postsMetaData = getPostMetadata();
     const postsPreviews = postsMetaData.map((slug: string, slugIdx: number) => {
         return (<div key={slugIdx}><h2>{slugIdx + 1}. {slug}</h2></div>)
