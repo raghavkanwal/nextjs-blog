@@ -1,11 +1,14 @@
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { ModeToggle } from '@/components/ui/theme-toggle'
+import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'shadcn ui',
-  description: 'shadcn ui',
+  title: 'Anushka\'s Website',
+  description: 'Anushka\'s website',
 }
 
 export default function RootLayout({
@@ -15,7 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <div className={inter.className}>
+            <Header />
+            {children}
+          </div>
+        </ThemeProvider></body>
     </html>
   )
 }
