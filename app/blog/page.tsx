@@ -1,4 +1,5 @@
 import fs from 'fs';
+import Link from 'next/link';
 
 const getPostMetadata = () => {
     const folder = "posts/";
@@ -12,7 +13,7 @@ const getPostMetadata = () => {
 export default function BlogPage() {
     const postsMetaData = getPostMetadata();
     const postsPreviews = postsMetaData.map((slug: string, slugIdx: number) => {
-        return (<div key={slugIdx}><h2>{slugIdx + 1}. {slug}</h2></div>)
+        return (<div key={slugIdx}><h2>{slugIdx + 1}. <Link href={`/posts/${slug}`}>{slug}</Link></h2></div>)
     });
 
 
