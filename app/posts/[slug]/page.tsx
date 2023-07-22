@@ -1,9 +1,13 @@
 import fs from 'fs';
 import MarkDown from 'markdown-to-jsx'
 
+export async function generateStaticParams() {
+    return [{toto: 'foo'}, {toto: 'bar'}];
+}
+
 const getPostContent = (slug: string) => {
     const folder = "posts/";
-    const file = `${folder}${slug}.md`;
+    const file = encodeURI(`${folder}${slug}.md`);
     const content = fs.readFileSync(file, 'utf8');
     return content;
 }

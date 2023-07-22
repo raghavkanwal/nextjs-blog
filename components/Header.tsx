@@ -32,7 +32,7 @@ export default function Header() {
         <div className="icon">
             <Link href="/">Anushka</Link>
         </div>
-        <div className="menu flex justify-between">
+        <div className="menu hidden md:flex justify-between">
             <NavigationMenu>
                 <NavigationMenuList>
                     { navigationItems.map((navItem, idx) => <NavigationMenuItem key={idx}>
